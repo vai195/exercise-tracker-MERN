@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <header>
-      <div className="mw-[1400px] my-0 mx-auto px-[10px] py-[20px] flex items-center justify-between">
+      <div className=" max-w-[1400px] my-0 mx-auto py-[10px] px-[20px] flex items-center justify-between">
         <Link to="/">
-          <h1>Exercise Tracker</h1>
+          <h1 className=" text-[1.2em]">Exercise Tracker</h1>
         </Link>
       </div>
     </header>

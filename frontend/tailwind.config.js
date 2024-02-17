@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        mainc: "#1aac83",
+        mainc: "#2F3C7E",
         errorc: "#e7195a",
       },
       fontFamily: {

@@ -4,12 +4,18 @@
 
 @layer base{
   body{
-    @apply bg-white m-0 font-poppins1
+    @apply bg-[#FBEAEB] m-0 font-poppins1
   }
   header{
-    @apply bg-slate-100
+    @apply bg-white
   }
   header a{
     @apply text-slate-700 font-extrabold
+  }
+  input{
+    @apply block p-[10px] mt-[10px] mb-[10px] w-[100%] border-[1px_solid_#ddd] rounded-[4px] box-border
+  }
+  input.error{
+    @apply border-errorc border border-solid
   }
 }
