@@ -8,8 +8,8 @@ const mongoose = require("mongoose");
 const app = express();
 app.use(
   cors({
-    origin: ["https://deploy-mern-frontend.vercel.app"],
-    methods: ["POST", "GET"],
+    origin: [""],
+    methods: ["POST", "GET", "DELETE", "PATCH"],
     credentials: true,
   })
 );
