@@ -12,7 +12,7 @@ This is a practice project of an exercise tracker a user can use to keep track o
 ### How to Setup
 
 1. Clone github repo
-2. install all dependencies using `npm install` in the the backend, frontend, and main source folders
+2. Install all dependencies using `npm install` in the the backend, frontend, and main source folders
 3. In the backend folder run `npm run dev` and then in the frontend folder run `npm start` to start the react app
 
 ### Display
