@@ -28,9 +28,6 @@ app.use("/api/exercises", exerciseRoutes);
 //connect to database
 mongoose
   .connect(process.env.MONGO_URI)
-  // .connect(
-  //   "mongodb+srv://vsonnaku:Vaimoney.1@exercise-mernapp.utxesbo.mongodb.net/?retryWrites=true&w=majority"
-  // )
   .then(() => {
     //listen for requests
     app.listen(4000, () => {
