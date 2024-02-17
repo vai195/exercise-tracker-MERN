@@ -1,10 +1,18 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const exerciseRoutes = require("./routes/exercises");
 const mongoose = require("mongoose");
 
 //express app
 const app = express();
+app.use(
+  cors({
+    origin: ["https://deploy-mern-frontend.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 //middleware
 app.use(express.json());
