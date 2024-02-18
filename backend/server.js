@@ -3,6 +3,13 @@ const express = require("express");
 const cors = require("cors");
 const exerciseRoutes = require("./routes/exercises");
 const mongoose = require("mongoose");
+const {
+  createExercise,
+  getExercise,
+  getExercises,
+  deleteExercise,
+  updateExercise,
+} = require("./controllers/exerciseController");
 
 //express app
 const app = express();
@@ -23,7 +30,22 @@ app.use((req, res, next) => {
 });
 
 //routes
-app.use("/api/exercises", exerciseRoutes);
+// app.use("/api/exercises", exerciseRoutes);
+
+//GET all exercises
+app.get("/", getExercises);
+
+//GET a single exercise
+app.get("/:id", getExercise);
+
+//POST a new exercise
+app.post("/", createExercise);
+
+//DELETE a new workout
+app.delete("/:id", deleteExercise);
+
+//UPDATE a exercise
+app.patch("/:id", updateExercise);
 
 //connect to database
 mongoose
