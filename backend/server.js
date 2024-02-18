@@ -8,7 +8,10 @@ const mongoose = require("mongoose");
 const app = express();
 app.use(
   cors({
-    origin: ["https://exercise-tracker-mern-frontend.vercel.app"],
+    origin: [
+      "http://localhost:4000",
+      "https://mern-exercise-tracker-wxyg.onrender.com",
+    ],
     methods: ["POST", "GET", "DELETE", "PATCH"],
     credentials: true,
   })
