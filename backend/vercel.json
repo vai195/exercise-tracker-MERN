@@ -9,9 +9,7 @@
     "routes": [
         { "src": "/api/exercises/(.*)", "dest": "/api/exercises/$1" },
         { "src": "/(.*)", "dest": "/server.js" }
-    ],
-    "env": {
-      "MONGO_URI": "mongodb+srv://vsonnaku:Vaimoney.1@exercise-mernapp.utxesbo.mongodb.net/?retryWrites=true&w=majority"
-    }
+    ]
+    
   }
 
