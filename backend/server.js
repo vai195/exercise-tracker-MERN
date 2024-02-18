@@ -10,7 +10,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:4000",
-      "https://mern-exercise-tracker-wxyg.onrender.com",
+      "https://exercise-tracker-mern-v1.netlify.app",
     ],
     methods: "GET,POST,PUT,DELETE, PATCH",
     credentials: true,
