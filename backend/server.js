@@ -12,6 +12,8 @@ app.use(
       "http://localhost:4000",
       "https://mern-exercise-tracker-wxyg.onrender.com",
     ],
+    methods: "GET,POST,PUT,DELETE, PATCH",
+    credentials: true,
   })
 );
 
