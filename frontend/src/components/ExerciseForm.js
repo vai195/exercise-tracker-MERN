@@ -14,13 +14,16 @@ const ExerciseForm = () => {
 
     const exercise = { title, weight, reps };
 
-    const response = await fetch("/api/exercises", {
-      method: "POST",
-      body: JSON.stringify(exercise),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises",
+      {
+        method: "POST",
+        body: JSON.stringify(exercise),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const json = await response.json();
 
     if (!response.ok) {

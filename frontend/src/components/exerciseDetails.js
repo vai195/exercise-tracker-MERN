@@ -8,9 +8,13 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 const ExerciseDetails = ({ exercise }) => {
   const { dispatch } = useExercisesContext();
   const handleClick = async () => {
-    const response = await fetch("/api/exercises/" + exercise._id, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises/" +
+        exercise._id,
+      {
+        method: "DELETE",
+      }
+    );
     const json = await response.json();
 
     if (response.ok) {
