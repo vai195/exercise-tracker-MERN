@@ -7,7 +7,9 @@ const Home = () => {
   const { exercises, dispatch } = useExercisesContext();
   useEffect(() => {
     const fetchExercises = async () => {
-      const response = await fetch("/api/exercises");
+      const response = await fetch(
+        "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises"
+      );
       const json = await response.json();
       if (response.ok) {
         dispatch({ type: "SET_EXERCISES", payload: json });
