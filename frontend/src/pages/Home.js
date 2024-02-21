@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import ExerciseDetails from "../components/exerciseDetails";
 import ExerciseForm from "../components/ExerciseForm";
 import { useExercisesContext } from "../Hooks/useExercisesContext";
-
+//auth
 // "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises"
 const Home = () => {
   const { exercises, dispatch } = useExercisesContext();
