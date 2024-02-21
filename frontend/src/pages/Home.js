@@ -3,12 +3,13 @@ import ExerciseDetails from "../components/exerciseDetails";
 import ExerciseForm from "../components/ExerciseForm";
 import { useExercisesContext } from "../Hooks/useExercisesContext";
 
+// "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises"
 const Home = () => {
   const { exercises, dispatch } = useExercisesContext();
   useEffect(() => {
     const fetchExercises = async () => {
       const response = await fetch(
-        "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises"
+        "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises/api/exercises"
       );
       const json = await response.json();
       if (response.ok) {
