@@ -4,6 +4,8 @@
 
 [MERN Exercise Tracker](https://exercise-tracker-mern-v1.netlify.app/)
 
+Please wait about 5 minutes for api to connect.
+
 ### About
 
 This is a practice project of an exercise tracker a user can use to keep track of the various exercises they completed or want to complete in their workout.
