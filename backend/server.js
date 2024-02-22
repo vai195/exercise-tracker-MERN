@@ -1,8 +1,10 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const exerciseRoutes = require("./routes/exercises");
+
 const mongoose = require("mongoose");
+const exerciseRoutes = require("./routes/exercises");
+const userRoutes = require("./routes/user");
 
 //express app
 const app = express();
@@ -10,6 +12,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:4000",
+      "http://localhost:3000",
       "https://exercise-tracker-mern-v1.netlify.app",
     ],
     methods: "GET,POST,PUT,DELETE, PATCH",
@@ -27,6 +30,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use("/api/exercises", exerciseRoutes);
+app.use("/api/user", userRoutes);
 
 //connect to database
 mongoose

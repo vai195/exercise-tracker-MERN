@@ -4,17 +4,21 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 //date fns
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import { useAuthContext } from "../Hooks/useAuthContext";
 
 const ExerciseDetails = ({ exercise }) => {
   const { dispatch } = useExercisesContext();
+  const { user } = useAuthContext();
   const handleClick = async () => {
-    const response = await fetch(
-      "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises/" +
-        exercise._id,
-      {
-        method: "DELETE",
-      }
-    );
+    if (!user) {
+      return;
+    }
+    const response = await fetch("/api/exercises" + exercise._id, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+    });
     const json = await response.json();
 
     if (response.ok) {
@@ -40,8 +44,7 @@ const ExerciseDetails = ({ exercise }) => {
       </p>
       <span
         className="absolute top-5 right-5 cursor-pointer bg-[#f1f1f1] p-[6px] rounded-[100%] text-[#333] hover:bg-mainc"
-        onClick={handleClick}
-      >
+        onClick={handleClick}>
         <FontAwesomeIcon icon={faTrashCan} />
       </span>
     </div>
