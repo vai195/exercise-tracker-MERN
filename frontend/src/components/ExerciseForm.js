@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useExercisesContext } from "../Hooks/useExercisesContext";
+import { useAuthContext } from "../Hooks/useAuthContext";
 
 const ExerciseForm = () => {
   const { dispatch } = useExercisesContext();
@@ -8,22 +9,23 @@ const ExerciseForm = () => {
   const [weight, setWeight] = useState("");
   const [error, setError] = useState(null);
   const [emptyFields, setEmptyFields] = useState([]);
-
+  const { user } = useAuthContext();
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    if (!user) {
+      setError("You must be logged in");
+      return;
+    }
     const exercise = { title, weight, reps };
 
-    const response = await fetch(
-      "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises",
-      {
-        method: "POST",
-        body: JSON.stringify(exercise),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch("/api/exercises", {
+      method: "POST",
+      body: JSON.stringify(exercise),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
+    });
     const json = await response.json();
 
     if (!response.ok) {
