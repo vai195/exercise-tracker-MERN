@@ -13,12 +13,16 @@ const ExerciseDetails = ({ exercise }) => {
     if (!user) {
       return;
     }
-    const response = await fetch("/api/exercises" + exercise._id, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    });
+    const response = await fetch(
+      "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises" +
+        exercise._id,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      }
+    );
     const json = await response.json();
 
     if (response.ok) {

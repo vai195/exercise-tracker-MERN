@@ -11,11 +11,14 @@ const Home = () => {
   const { user } = useAuthContext();
   useEffect(() => {
     const fetchExercises = async () => {
-      const response = await fetch("/api/exercises", {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      const response = await fetch(
+        "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises",
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
       const json = await response.json();
       if (response.ok) {
         dispatch({ type: "SET_EXERCISES", payload: json });
