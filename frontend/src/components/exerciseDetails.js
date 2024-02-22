@@ -14,7 +14,7 @@ const ExerciseDetails = ({ exercise }) => {
       return;
     }
     const response = await fetch(
-      "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises" +
+      "https://mern-exercise-tracker-wxyg.onrender.com/api/exercises/" +
         exercise._id,
       {
         method: "DELETE",
